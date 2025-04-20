@@ -2,13 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { Moon, Sun, Share2 } from "lucide-react"
+import { useTheme } from "next-themes"
 
-interface HeaderProps {
-  darkMode: boolean
-  setDarkMode: (value: boolean) => void
-}
+export function Header() {
+  const { theme, setTheme } = useTheme()
+  const isDarkTheme = theme === "dark"
 
-export function Header({ darkMode, setDarkMode }: HeaderProps) {
   return (
     <header className="flex items-center justify-between p-2 border-b border-gray-700 bg-[#1e2030]">
       <div className="flex items-center">
@@ -27,10 +26,10 @@ export function Header({ darkMode, setDarkMode }: HeaderProps) {
           <Button
             variant="outline"
             size="sm"
-            className="bg-[#1e2030] border-gray-700 text-white hover:bg-gray-800"
-            onClick={() => setDarkMode(!darkMode)}
+            className={`${isDarkTheme ? "bg-[#1e2030] border-gray-700 text-white hover:bg-gray-800" : "bg-white border-gray-300 text-gray-900 hover:bg-gray-100"}`}
+            onClick={() => setTheme(isDarkTheme ? "light" : "dark")}
           >
-            {darkMode ? (
+            {isDarkTheme ? (
               <div className="flex items-center gap-2">
                 <Moon size={16} />
                 <span>DARK UI</span>
@@ -51,7 +50,11 @@ export function Header({ darkMode, setDarkMode }: HeaderProps) {
         </div>
       </div>
 
-      <Button variant="outline" size="sm" className="bg-[#1e2030] border-gray-700 text-white hover:bg-gray-800">
+      <Button
+        variant="outline"
+        size="sm"
+        className={`${isDarkTheme ? "bg-[#1e2030] border-gray-700 text-white hover:bg-gray-800" : "bg-white border-gray-300 text-gray-900 hover:bg-gray-100"}`}
+      >
         <div className="flex items-center gap-2">
           <Share2 size={16} />
           <span>SHARE SESSION</span>

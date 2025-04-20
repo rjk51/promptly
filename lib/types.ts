@@ -14,4 +14,7 @@ export interface Problem {
   constraints: string[]
   starterCode: string
   language: string
+  testCases: string[]
+  expectedOutputs: string[]
+  starterCodeMap?: Record<string, string>
 }

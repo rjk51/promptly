@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.dark {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 30, 32, 48;
   --background-end-rgb: 30, 32, 48;
@@ -84,4 +90,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor .margin {
+  transition: background-color 0.3s ease;
+}
+
+.monaco-editor .monaco-editor-background {
+  transition: background-color 0.3s ease;
 }

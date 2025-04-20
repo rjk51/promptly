@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "DSA Practice Platform",
+  title: "Promptly",
   description: "Practice data structures and algorithms with AI assistance",
     generator: 'v0.dev'
 }

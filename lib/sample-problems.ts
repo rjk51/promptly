@@ -37,6 +37,8 @@ export const sampleProblems: Problem[] = [
   
 };`,
     language: "javascript",
+    testCases: ["[2,7,11,15], 9", "[3,2,4], 6", "[3,3], 6", "[1,2,3,4], 7"],
+    expectedOutputs: ["[0,1]", "[1,2]", "[0,1]", "[2,3]"],
   },
   {
     id: "2",
@@ -72,5 +74,7 @@ export const sampleProblems: Problem[] = [
   
 };`,
     language: "javascript",
+    testCases: ["121", "-121", "10", "12321", "1221"],
+    expectedOutputs: ["true", "false", "false", "true", "true"],
   },
 ]
